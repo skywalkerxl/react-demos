@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<script>
+    const PI = 3.14;
+    var f = (num1, num2) => {
+        return num1 + num2;
+    }
+
+    // only one param don't need ()
+    var f = arg => {
+        return arg;
+    }
+
+    // 箭头后面可以直接写返回值
+    let a = () => [1, 2];
+
+    // 如果想返回一个对象字面量，那么应该用一个括号括起来，否则会被当成函数体。
+    let b = (a, c) => ({
+        a: 1,
+        b: 2,
+        c: a,
+        d: c
+    })
+    console.log(f(1,2));
+
+    // 箭头函数里的this指向问题
+    let obj = {
+        fn: function () {
+            let a = () => {
+                console.log(this);
+            };
+            a();
+        }
+    }
+    console.log(obj.fn());  // 这里this指向obj
+</script>
+</body>
+</html>

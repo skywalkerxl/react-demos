@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>变量的解构赋值</title>
+</head>
+<body>
+<script>
+    {
+
+        let obj = {
+            firstName: 'Donald',
+            lastName: 'Trump'
+        };
+
+        let {
+            firstName,
+            lastName
+        } = obj;
+        console.log(`${firstName} ${lastName}`);
+
+        let LogNames = obj => {
+            console.log(` ${obj.firstName} ${obj.lastName}`);
+        }
+        LogNames({firstName: 'Darth', lastName: 'Vidas'});
+
+        let NickName = ({firstName, lastName}) => {
+            console.log(`${firstName} ${lastName}`)
+        }
+        NickName({firstName: 'Ma', lastName: 'Jack'});
+    }
+
+</script>
+</body>
+</html>
